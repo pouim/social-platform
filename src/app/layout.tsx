@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import Sidebar from "@/components/Sidebar";
 import "./globals.css";
 
@@ -15,10 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="h-screen flex flex-col lg:flex-row">
+      <body className="flex h-full lg:flex-row flex-col">
         <Sidebar />
-        <div className="flex-grow p-4">
-          {children} 
+        <div className="flex-grow lg:ml-72 p-4 min-h-full">
+          {children} <ToastContainer />
         </div>
       </body>
     </html>

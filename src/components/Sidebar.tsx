@@ -11,10 +11,10 @@ export default function Sidebar() {
           <ul className="space-y-2">
             <li>
               <Link
-                href="/dashboard"
+                href="/content"
                 className="block p-3 rounded hover:bg-gray-700"
               >
-                Dashboard
+                Contents
               </Link>
             </li>
             <li>

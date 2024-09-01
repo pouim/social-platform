@@ -17,6 +17,10 @@ const contentSchema = new Schema(
     },
     scheduledAt: Date,
     publishedAt: Date,
+    socialMedia: {
+      type: [String],
+      default: [],
+    },
   },
   { timestamps: true }
 );
