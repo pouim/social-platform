@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "daisyui": "^4.12.10",
+    "mongoose": "^8.6.0",
     "next": "14.2.7",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/mongoose": "^5.11.96",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
