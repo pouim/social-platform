@@ -1,15 +1,26 @@
 import { model, models, Schema } from "mongoose";
 
-const postSchema = new Schema(
+const contentSchema = new Schema(
   {
-    msg: {
+    title: {
       type: String,
       required: true,
     },
+    body: {
+      type: String,
+      required: true,
+    },
+    images: [String],
+    isPublished: {
+      type: Boolean,
+      default: false,
+    },
+    scheduledAt: Date,
+    publishedAt: Date,
   },
   { timestamps: true }
 );
 
-const PostModel = models.post || model("post", postSchema);
+const ContentModel = models.content || model("content", contentSchema);
 
-export default PostModel;
+export default ContentModel;
