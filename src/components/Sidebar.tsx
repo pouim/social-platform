@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Sidebar() {
+  const pathname = usePathname();
+
   return (
     <>
       <div className="hidden lg:flex flex-col h-screen w-72 bg-gray-800 text-white fixed">
@@ -12,7 +17,9 @@ export default function Sidebar() {
             <li>
               <Link
                 href="/content"
-                className="block p-3 rounded hover:bg-gray-700"
+                className={`block p-3 rounded ${
+                  pathname === "/content" ? "bg-gray-700" : "hover:bg-gray-700"
+                }`}
               >
                 Contents
               </Link>
@@ -20,7 +27,9 @@ export default function Sidebar() {
             <li>
               <Link
                 href="/create"
-                className="block p-3 rounded hover:bg-gray-700"
+                className={`block p-3 rounded ${
+                  pathname === "/create" ? "bg-gray-700" : "hover:bg-gray-700"
+                }`}
               >
                 Create Content
               </Link>
@@ -39,8 +48,10 @@ export default function Sidebar() {
           <ul className="flex space-x-4">
             <li>
               <Link
-                href="/dashboard"
-                className="text-sm p-2 rounded hover:bg-gray-700"
+                href="/content"
+                className={`block p-3 rounded ${
+                  pathname === "/content" ? "bg-gray-700" : "hover:bg-gray-700"
+                }`}
               >
                 Dashboard
               </Link>
@@ -48,7 +59,9 @@ export default function Sidebar() {
             <li>
               <Link
                 href="/create"
-                className="text-sm p-2 rounded hover:bg-gray-700"
+                className={`block p-3 rounded ${
+                  pathname === "/create" ? "bg-gray-700" : "hover:bg-gray-700"
+                }`}
               >
                 Create
               </Link>
